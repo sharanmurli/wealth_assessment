@@ -148,13 +148,10 @@ query GetAssets($wid: String!) {
 
 ---
 
-## ✅ Notes
 
-- Be sure the backend GraphQL server is running on `http://localhost:4000/graphql`
-- Use the provided `assets.json` and backend `index.ts` for mock asset data
-- Supported `WID`s:
-  - `ae0df17e-514e-4f52-a0b5-5bfb1adf84c9`
-  - `de364d7d-3313-4efe-aae8-99208793a66c`
+
+- Ensure that the backend GraphQL server is running on `http://localhost:4000/graphql`
+
 
 ---
 
