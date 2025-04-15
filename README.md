@@ -1,4 +1,4 @@
-# 💰 Wealth.com Frontend Take-Home Assessment
+#  Wealth.com Frontend Take-Home Assessment
 
 This project is a React + TypeScript frontend application built to fetch and display a user's asset data using GraphQL. The interface presents grouped asset categories, supports collapsible tables and features a responsive design using MUI components.
 
