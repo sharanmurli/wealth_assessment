@@ -1,35 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Box, Typography, Container, CssBaseline } from '@mui/material';
+import AssetTable from './components/AssetTable';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <CssBaseline /> {/* Ensures consistent baseline styling across browsers */}
 
-export default App
+      <Box
+        sx={{
+          backgroundColor: '#f8f9fa',
+        
+          minWidth: '100vw',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'flex-start',
+          py: { xs: 4, sm: 6 }, // responsive padding
+          overflowX: 'hidden', // prevents horizontal scroll
+        }}
+      >
+        {/* Heading Section */}
+        <Container maxWidth="md">
+          <Typography
+            variant="h4"
+            align="center"
+            gutterBottom
+            sx={{ color: '#212529', fontWeight: 600 }}
+          >
+            Wealth Management
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            align="center"
+            gutterBottom
+            sx={{ color: '#495057' }}
+          >
+            Track and manage your financial assets efficiently.
+          </Typography>
+        </Container>
+
+        {/* Asset Table Section */}
+        <Container maxWidth="md" sx={{ mt: 4, width: '100%' }}>
+          <AssetTable />
+        </Container>
+      </Box>
+    </>
+  );
+};
+
+export default App;
