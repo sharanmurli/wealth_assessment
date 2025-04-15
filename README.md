@@ -155,14 +155,3 @@ query GetAssets($wid: String!) {
 
 ---
 
-## 📬 Submission
-
-- ✅ GitHub repository with code
-- ✅ This README.md with setup and design notes
-- ✅ API integration using Apollo
-- ✅ Responsive design with MUI
-- ✅ Email the GitHub repo link to **britni.mattison@wealth.com**
-
----
-
-Thanks for the opportunity to work on this! 🙏
