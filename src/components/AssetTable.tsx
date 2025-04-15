@@ -52,8 +52,8 @@ import {
     const [modalOpen, setModalOpen] = useState(false);
   
     useEffect(() => {
-      if (data) console.log('✅ GraphQL data:', data.getAssets);
-      if (error) console.error('❌ GraphQL error:', error);
+      if (data) console.log('GraphQL data:', data.getAssets);
+      if (error) console.error(' GraphQL error:', error);
     }, [data, error]);
   
     if (loading)

@@ -1,54 +1,154 @@
-# React + TypeScript + Vite
+# 💰 Wealth.com Frontend Take-Home Assessment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React + TypeScript frontend application built to fetch and display a user's asset data using GraphQL. The interface presents grouped asset categories, supports collapsible tables, and features a responsive design using MUI components.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📎 GitHub Repository
 
-## Expanding the ESLint configuration
+🔗 GitHub Link: [https://github.com/sharanmurli/wealth-assessment](https://github.com/your-username/wealth-assessment)  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## 🚀 Setup & Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/wealth-assessment.git
+cd wealth-assessment
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install Dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
+# or with yarn
+yarn install
 ```
+
+### 3. Configure Environment Variables
+
+Create a `.env` file at the root of the project and add:
+
+```
+VITE_GRAPHQL_ENDPOINT=http://localhost:4000/graphql
+VITE_WID=ae0df17e-514e-4f52-a0b5-5bfb1adf84c9
+```
+
+You can use the second `wid` if needed:
+```
+VITE_WID=de364d7d-3313-4efe-aae8-99208793a66c
+```
+
+### 4. Run the App
+
+Start the frontend dev server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+The app will be available at [http://localhost:5173](http://localhost:5173).
+
+---
+
+## ⚙️ Tech Stack
+
+- **React 19 + TypeScript**
+- **MUI (Material UI)** – for component styling and responsiveness
+- **Apollo Client** – for GraphQL API integration
+- **Vite** – for fast builds and dev server
+- **ESLint + Prettier** – for code linting and formatting
+
+---
+
+## 🧠 Design Decisions
+
+- **MUI as Component Library**: Chosen for its rich set of accessible and responsive UI components, speeding up development and aligning with modern design principles.
+- **Apollo Client**: Used for declarative data fetching and caching, simplifying the integration with GraphQL APIs.
+- **Collapsible Tables**: Enables better UX when viewing nested asset categories and subcategories.
+- **Asset Modal**: Designed to display `Overview`, `Holdings`, and `Details` dynamically depending on asset structure.
+- **Responsive Layout**: Uses MUI's grid and breakpoint system to ensure smooth experience across devices.
+
+---
+
+## 🧪 Features Implemented
+
+- Group assets by `primaryAssetCategory` and `wealthAssetType`
+- Show collapsible sub-tables for each subcategory
+- Modal with tabs:
+  - `Overview`: Value and Date
+  - `Holdings`: Dynamic table with collapsible breakdown
+  - `Details`: Parsed and formatted view of JSON-based asset metadata
+- Fallback handling for missing fields
+- Responsive and mobile-friendly layout
+- Loading and error states for GraphQL
+
+---
+
+## ⚠️ Trade-Offs & Limitations
+
+- **Hardcoded WID**: To simulate API usage, we use a hardcoded user ID via `.env`. In a full app, authentication and user context would handle this.
+- **Basic Styling**: Focused on functionality and clarity over detailed pixel-perfect design due to time constraints.
+- **Partial Data Mapping**: Only relevant assetInfo fields are shown in `Details`. A schema definition could improve robustness.
+
+---
+
+## 🔌 API Integration
+
+### Backend Setup
+
+Follow the steps provided in `TROUBLESHOOTING.md` and backend `index.ts` to spin up the GraphQL server.
+
+### Sample GraphQL Query:
+
+```graphql
+query GetAssets($wid: String!) {
+  getAssets(wid: $wid) {
+    assetId
+    nickname
+    wealthAssetType
+    primaryAssetCategory
+    balanceCurrent
+    balanceAsOf
+    assetInfo
+    holdings {
+      majorAssetClasses {
+        majorClass
+        assetClasses {
+          minorAssetClass
+          value
+        }
+      }
+    }
+  }
+}
+```
+
+---
+
+## ✅ Notes
+
+- Be sure the backend GraphQL server is running on `http://localhost:4000/graphql`
+- Use the provided `assets.json` and backend `index.ts` for mock asset data
+- Supported `WID`s:
+  - `ae0df17e-514e-4f52-a0b5-5bfb1adf84c9`
+  - `de364d7d-3313-4efe-aae8-99208793a66c`
+
+---
+
+## 📬 Submission
+
+- ✅ GitHub repository with code
+- ✅ This README.md with setup and design notes
+- ✅ API integration using Apollo
+- ✅ Responsive design with MUI
+- ✅ Email the GitHub repo link to **britni.mattison@wealth.com**
+
+---
+
+Thanks for the opportunity to work on this! 🙏
