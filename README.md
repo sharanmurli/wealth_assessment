@@ -1,6 +1,6 @@
 # 💰 Wealth.com Frontend Take-Home Assessment
 
-This project is a React + TypeScript frontend application built to fetch and display a user's asset data using GraphQL. The interface presents grouped asset categories, supports collapsible tables, and features a responsive design using MUI components.
+This project is a React + TypeScript frontend application built to fetch and display a user's asset data using GraphQL. The interface presents grouped asset categories, supports collapsible tables and features a responsive design using MUI components.
 
 ---
 
@@ -16,8 +16,8 @@ This project is a React + TypeScript frontend application built to fetch and dis
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/wealth-assessment.git
-cd wealth-assessment
+git clone https://github.com/sharanmurli/wealth_assessment.git
+cd wealth_assessment
 ```
 
 ### 2. Install Dependencies
@@ -26,7 +26,9 @@ cd wealth-assessment
 npm install
 # or with yarn
 yarn install
+
 ```
+
 
 ### 3. Configure Environment Variables
 
@@ -68,7 +70,7 @@ The app will be available at [http://localhost:5173](http://localhost:5173).
 
 ## 🧠 Design Decisions
 
-- **MUI as Component Library**: Chosen for its rich set of accessible and responsive UI components, speeding up development and aligning with modern design principles.
+- **MUI as Component Library**: I Chose this for its rich set of accessible and responsive UI components, speeding up development and aligning with modern design principles.
 - **Apollo Client**: Used for declarative data fetching and caching, simplifying the integration with GraphQL APIs.
 - **Collapsible Tables**: Enables better UX when viewing nested asset categories and subcategories.
 - **Asset Modal**: Designed to display `Overview`, `Holdings`, and `Details` dynamically depending on asset structure.
@@ -95,6 +97,21 @@ The app will be available at [http://localhost:5173](http://localhost:5173).
 - **Hardcoded WID**: To simulate API usage, we use a hardcoded user ID via `.env`. In a full app, authentication and user context would handle this.
 - **Basic Styling**: Focused on functionality and clarity over detailed pixel-perfect design due to time constraints.
 - **Partial Data Mapping**: Only relevant assetInfo fields are shown in `Details`. A schema definition could improve robustness.
+
+---
+
+🔧 Future Enhancements
+- Robust Error Handling
+Improve user feedback by displaying detailed error messages for API failures, missing fields, and invalid data, along with appropriate UI fallbacks.
+
+- Mobile-Friendly Asset Interaction
+Optimize the UI for mobile devices by refining collapsible sections, improving touch targets, and ensuring smooth scrolling and responsiveness.
+
+- Search and Filter Functionality
+Allow users to quickly locate assets by implementing search and filtering options based on asset type, category, or keyword.
+
+- Dark Mode Support
+Add a toggle for light/dark themes using MUI's theme customization features, enhancing accessibility and user preference.
 
 ---
 
