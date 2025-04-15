@@ -6,7 +6,7 @@ This project is a React + TypeScript frontend application built to fetch and dis
 
 ## 📎 GitHub Repository
 
-🔗 GitHub Link: [https://github.com/sharanmurli/wealth-assessment](https://github.com/your-username/wealth-assessment)  
+🔗 GitHub Link: [https://github.com/sharanmurli/wealth_assessment](https://github.com/your-username/wealth_assessment)  
 
 
 ---
